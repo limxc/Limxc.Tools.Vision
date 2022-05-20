@@ -29,6 +29,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/vision_httpapihost:latest
-          # tags: ${{ steps.meta.outputs.tags }}
+          tags: |
+            ${{ secrets.DOCKER_USERNAME }}/vision_httpapihost:latest
+            ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
