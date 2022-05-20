@@ -38,21 +38,34 @@
             BorderThickness="2">
             <Image x:Name="ImgTarget" Stretch="Uniform" />
         </Border>
-        <Button
-            x:Name="BtnLocal"
+        <UniformGrid
             Grid.Row="1"
             Grid.Column="0"
-            Width="100"
-            Height="40" Click="BtnLocal_OnClick">
-            Local
-        </Button>
-        <Button
-            x:Name="BtnApi"
-            Grid.Row="1"
-            Grid.Column="1"
-            Width="100"
-            Height="40" Click="BtnApi_OnClick">
-            Api
-        </Button>
+            Grid.ColumnSpan="2"
+            Columns="3"
+            Rows="1">
+            <Button
+                x:Name="BtnLocal"
+                Width="100"
+                Height="40"
+                Click="BtnLocal_OnClick">
+                Local
+            </Button>
+            <Button
+                x:Name="BtnApi"
+                Width="100"
+                Height="40"
+                Click="BtnApi_OnClick">
+                Api
+            </Button>
+            <Button
+                x:Name="BtnDockerApi"
+                Width="100"
+                Height="40"
+                Click="BtnDockerApi_OnClick">
+                DockerApi
+            </Button>
+        </UniformGrid>
+
     </Grid>
 </Window>

@@ -39,10 +39,10 @@ public partial class MainWindow : Window
             gray.ToBitmapImage();
     }
 
-    private async Task Api()
+    private async Task Api(string baseUrl)
     {
         var base64Image = ImgSource.FromImageControl();
-        var meta = await RestService.For<IVision>(ConstNames.BaseUrl).TurnGray(new MetaImage() { Base64 = base64Image });
+        var meta = await RestService.For<IVision>(baseUrl).TurnGray(new MetaImage() { Base64 = base64Image });
         var gray = meta.Base64;
         if (string.IsNullOrWhiteSpace(gray))
             return;
@@ -60,7 +60,19 @@ public partial class MainWindow : Window
     {
         try
         { 
-            await Api();
+            await Api(ConstNames.BaseUrl);
+        }
+        catch (Exception exception)
+        {
+            MessageBox.Show(exception.ToString());
+        }
+    }
+
+    private async void BtnDockerApi_OnClick(object sender, RoutedEventArgs e)
+    {
+        try
+        {
+            await Api(ConstNames.BaseDockerUrl);
         }
         catch (Exception exception)
         {

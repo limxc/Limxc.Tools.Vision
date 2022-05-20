@@ -13,7 +13,7 @@
 #    && apt-get update \
 #    && apt-get -y install -y aspnetcore-runtime-6.0
 
-FROM limxc/aspnetcore6_ubuntu1804 AS base
+FROM limxc/aspnetcore6_opencv_ubuntu1804 AS base
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src 

@@ -9,5 +9,6 @@ namespace TestHost
     public static class ConstNames
     {
         public const string BaseUrl = "http://localhost:5000";
+        public const string BaseDockerUrl = "http://localhost:5001";
     }
 }
